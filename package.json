@@ -1,0 +1,15 @@
+{
+  "name": "frs-backend",
+  "version": "0.0.1",
+  "description": "backend service for financial reporting system",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "shaw1121",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.0",
+    "mongoose": "^5.5.9"
+  }
+}
