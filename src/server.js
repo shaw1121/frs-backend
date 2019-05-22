@@ -56,6 +56,24 @@ app.post('/income', (req, res) => {
 
 });
 
+app.put('/income', (req, res) => {
+    logger.log(`update /income req.body: ${JSON.stringify(req.body)}`);
+
+    // {new: true} 返回修改后的内容
+    Income.findOneAndUpdate({id: req.body.id}, req.body, {new: true}, (err, result) => {
+        if (err) throw err;
+
+        logger.log(`findoneAndUpdate result: ${result}`);
+
+        if (result) {
+            logger.log('更新成功！');
+            res.send(result);
+        } else {
+            res.send({'ok': 0, 'msg': '更新失败'});
+        }
+    })
+});
+
 app.post('/delete', (req, res) => {
     logger.log(`delete /delete req.body: ${JSON.stringify(req.body)}`);
 
@@ -65,7 +83,7 @@ app.post('/delete', (req, res) => {
         logger.log(result);
 
         if (result) {
-            logger.log('删除成功！')
+            logger.log('删除成功！');
             res.send(result);
         } else {
             res.send({'ok': 0, 'msg': '删除失败'});
