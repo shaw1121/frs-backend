@@ -7,6 +7,8 @@ income API Refer
 * put  /income 更新
 * post /delete 删除
 
+* get /incomeTotal
+
 
 ## 数据库: mongodb
 
