@@ -64,7 +64,7 @@ app.put('/income', (req, res) => {
         if (err) throw err;
 
         logger.log(`findoneAndUpdate result: ${result}`);
-
+r
         if (result) {
             logger.log('更新成功！');
             res.send(result);
